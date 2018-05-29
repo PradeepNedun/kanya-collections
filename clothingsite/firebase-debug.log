@@ -1,0 +1,294 @@
+[debug] [2018-04-04T09:23:55.008Z] ----------------------------------------------------------------------
+[debug] [2018-04-04T09:23:55.015Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\pnedun\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] [2018-04-04T09:23:55.016Z] CLI Version:   3.15.3
+[debug] [2018-04-04T09:23:55.016Z] Platform:      win32
+[debug] [2018-04-04T09:23:55.016Z] Node Version:  v6.10.3
+[debug] [2018-04-04T09:23:55.018Z] Time:          Wed Apr 04 2018 14:53:55 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T09:23:55.018Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-04T09:23:55.136Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-04T09:23:55.138Z] > authorizing via signed-in user
+[debug] [2018-04-04T09:23:55.144Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-04-04T09:23:55.145Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/IUrx55iF6vSVnnhbQJvAazhIA2330GkmSHfwXV1ahAk',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Wed Apr 04 2018 14:53:55 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T09:24:04.414Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T09:24:04.477Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/kanya-collections  
+ Wed Apr 04 2018 14:54:04 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T09:24:14.808Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T09:24:14.810Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/kanya-collections/tokens  
+ Wed Apr 04 2018 14:54:14 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T09:24:15.910Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'kanya-collections'...
+[info] 
+[info] i  deploying database, storage, firestore, functions, hosting
+[info] i  database: checking rules syntax...
+[debug] [2018-04-04T09:24:20.509Z] >>> HTTP REQUEST PUT https://kanya-collections.firebaseio.com/.settings/rules.json?dryRun=true {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+} 
+ Wed Apr 04 2018 14:54:20 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T09:24:21.771Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database kanya-collections is valid
+[debug] [2018-04-04T09:24:21.776Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/kanya-collections  
+ Wed Apr 04 2018 14:54:21 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T09:24:26.406Z] <<< HTTP RESPONSE 200
+[info] i  storage: checking storage.rules for compilation errors...
+[debug] [2018-04-04T09:24:26.470Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/kanya-collections:test { source: { files: [ [Object] ] } } 
+ Wed Apr 04 2018 14:54:26 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T09:24:28.008Z] <<< HTTP RESPONSE 200
+[info] +  storage: rules file storage.rules compiled successfully
+[info] i  firestore: checking firestore.rules for compilation errors...
+[debug] [2018-04-04T09:24:28.032Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/kanya-collections:test { source: { files: [ [Object] ] } } 
+ Wed Apr 04 2018 14:54:28 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T09:24:29.287Z] <<< HTTP RESPONSE 200
+[info] +  firestore: rules file firestore.rules compiled successfully
+[debug] [2018-04-04T09:24:29.304Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase experimental:functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "~5.4.2",
+    "firebase-functions": "^0.7.1"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[info] i  runtimeconfig: ensuring necessary APIs are enabled...
+[debug] [2018-04-04T09:24:29.310Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/kanya-collections?view=CONSUMER_VIEW  
+ Wed Apr 04 2018 14:54:29 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T09:24:29.312Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/kanya-collections?view=CONSUMER_VIEW  
+ Wed Apr 04 2018 14:54:29 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T09:24:40.236Z] <<< HTTP RESPONSE 200
+[info] +  functions: all necessary APIs are enabled
+[debug] [2018-04-04T09:24:40.255Z] <<< HTTP RESPONSE 200
+[info] +  runtimeconfig: all necessary APIs are enabled
+[debug] [2018-04-04T09:24:40.273Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/kanya-collections  
+ Wed Apr 04 2018 14:54:40 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T09:24:40.276Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/kanya-collections/apiKeys  
+ Wed Apr 04 2018 14:54:40 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T09:24:44.817Z] <<< HTTP RESPONSE 200
+[info] 
+
+There was an issue deploying your functions. Verify that your project has a Google App Engine instance setup at https://console.cloud.google.com/appengine and try again. If this issue persists, please contact support.
+[debug] [2018-04-04T09:25:22.366Z] Error: connect ETIMEDOUT 172.217.160.138:443
+    at Object.exports._errnoException (util.js:1018:11)
+    at exports._exceptionWithHostPort (util.js:1041:20)
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1086:14)
+[error] 
+[error] Error: Server Error. connect ETIMEDOUT 172.217.160.138:443
+[debug] [2018-04-04T09:27:46.539Z] ----------------------------------------------------------------------
+[debug] [2018-04-04T09:27:46.545Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\pnedun\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] [2018-04-04T09:27:46.546Z] CLI Version:   3.15.3
+[debug] [2018-04-04T09:27:46.546Z] Platform:      win32
+[debug] [2018-04-04T09:27:46.546Z] Node Version:  v6.10.3
+[debug] [2018-04-04T09:27:46.547Z] Time:          Wed Apr 04 2018 14:57:46 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T09:27:46.547Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-04T09:27:46.575Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-04T09:27:46.576Z] > authorizing via signed-in user
+[debug] [2018-04-04T09:27:46.581Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/kanya-collections  
+ Wed Apr 04 2018 14:57:46 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T09:27:47.734Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T09:27:47.737Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/kanya-collections/tokens  
+ Wed Apr 04 2018 14:57:47 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T09:27:49.149Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'kanya-collections'...
+[info] 
+[info] i  deploying database, storage, firestore, functions, hosting
+[info] i  database: checking rules syntax...
+[debug] [2018-04-04T09:27:50.651Z] >>> HTTP REQUEST PUT https://kanya-collections.firebaseio.com/.settings/rules.json?dryRun=true {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+} 
+ Wed Apr 04 2018 14:57:50 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T09:27:51.828Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database kanya-collections is valid
+[debug] [2018-04-04T09:27:51.834Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/kanya-collections  
+ Wed Apr 04 2018 14:57:51 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T09:27:53.357Z] <<< HTTP RESPONSE 200
+[info] i  storage: checking storage.rules for compilation errors...
+[debug] [2018-04-04T09:27:53.369Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/kanya-collections:test { source: { files: [ [Object] ] } } 
+ Wed Apr 04 2018 14:57:53 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T09:27:54.865Z] <<< HTTP RESPONSE 200
+[info] +  storage: rules file storage.rules compiled successfully
+[info] i  firestore: checking firestore.rules for compilation errors...
+[debug] [2018-04-04T09:27:54.876Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/kanya-collections:test { source: { files: [ [Object] ] } } 
+ Wed Apr 04 2018 14:57:54 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T09:27:56.292Z] <<< HTTP RESPONSE 200
+[info] +  firestore: rules file firestore.rules compiled successfully
+[debug] [2018-04-04T09:27:59.527Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase experimental:functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "~5.4.2",
+    "firebase-functions": "^0.7.1"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[info] i  runtimeconfig: ensuring necessary APIs are enabled...
+[debug] [2018-04-04T09:27:59.537Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/kanya-collections?view=CONSUMER_VIEW  
+ Wed Apr 04 2018 14:57:59 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T09:27:59.539Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/kanya-collections?view=CONSUMER_VIEW  
+ Wed Apr 04 2018 14:57:59 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T09:28:01.345Z] <<< HTTP RESPONSE 200
+[info] +  runtimeconfig: all necessary APIs are enabled
+[debug] [2018-04-04T09:28:01.427Z] <<< HTTP RESPONSE 200
+[info] +  functions: all necessary APIs are enabled
+[debug] [2018-04-04T09:28:01.430Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/kanya-collections  
+ Wed Apr 04 2018 14:58:01 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T09:28:01.431Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/kanya-collections/apiKeys  
+ Wed Apr 04 2018 14:58:01 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T09:28:02.934Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T09:28:02.941Z] <<< HTTP RESPONSE 200
+[info] i  storage: uploading rules storage.rules...
+[debug] [2018-04-04T09:28:02.951Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/kanya-collections/rulesets { source: { files: [ [Object] ] } } 
+ Wed Apr 04 2018 14:58:02 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T09:28:04.624Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T09:28:04.625Z] [rules] created ruleset projects/kanya-collections/rulesets/29f2caf0-c7fd-47a5-be03-10daa54b997f
+[info] i  firestore: uploading rules firestore.rules...
+[debug] [2018-04-04T09:28:04.638Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/kanya-collections/rulesets { source: { files: [ [Object] ] } } 
+ Wed Apr 04 2018 14:58:04 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T09:28:04.642Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1beta1/projects/kanya-collections/databases/(default)/indexes  
+ Wed Apr 04 2018 14:58:04 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T09:28:05.898Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T09:28:06.375Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T09:28:06.375Z] [rules] created ruleset projects/kanya-collections/rulesets/3026cf9b-0745-4e0b-a1d7-4e85611766ba
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2018-04-04T09:32:07.097Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/kanya-collections/configs  
+ Wed Apr 04 2018 15:02:07 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T09:32:16.659Z] <<< HTTP RESPONSE 200
+[info] i  hosting: preparing dist directory for upload...
+[debug] [2018-04-04T09:32:19.125Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/kanya-collections/uploads/-L9Ez-Ugep-BnLy10z97?fileCount=15&message=  
+ Wed Apr 04 2018 15:02:19 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T09:32:24.567Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T09:32:24.568Z] [hosting] .tgz uploaded successfully, waiting for extraction
+[info] +  hosting: 15 files uploaded successfully
+[info] i  database: releasing rules...
+[debug] [2018-04-04T09:32:29.653Z] >>> HTTP REQUEST PUT https://kanya-collections.firebaseio.com/.settings/rules.json {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+} 
+ Wed Apr 04 2018 15:02:29 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T09:32:50.872Z] Error: connect ETIMEDOUT 35.201.97.85:443
+    at Object.exports._errnoException (util.js:1018:11)
+    at exports._exceptionWithHostPort (util.js:1041:20)
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1086:14)
+[error] 
+[error] Error: Server Error. connect ETIMEDOUT 35.201.97.85:443
+[debug] [2018-04-04T10:53:41.174Z] ----------------------------------------------------------------------
+[debug] [2018-04-04T10:53:41.181Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\pnedun\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] [2018-04-04T10:53:41.182Z] CLI Version:   3.15.3
+[debug] [2018-04-04T10:53:41.182Z] Platform:      win32
+[debug] [2018-04-04T10:53:41.182Z] Node Version:  v6.10.3
+[debug] [2018-04-04T10:53:41.184Z] Time:          Wed Apr 04 2018 16:23:41 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T10:53:41.184Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-04T10:53:41.224Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-04T10:53:41.227Z] > authorizing via signed-in user
+[debug] [2018-04-04T10:53:41.233Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-04-04T10:53:41.233Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/IUrx55iF6vSVnnhbQJvAazhIA2330GkmSHfwXV1ahAk',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Wed Apr 04 2018 16:23:41 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T10:53:41.520Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T10:53:41.552Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/kanya-collections  
+ Wed Apr 04 2018 16:23:41 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T10:53:42.728Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T10:53:42.730Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/kanya-collections/tokens  
+ Wed Apr 04 2018 16:23:42 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T10:53:43.722Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'kanya-collections'...
+[info] 
+[info] i  deploying database, storage, firestore, functions, hosting
+[info] i  database: checking rules syntax...
+[debug] [2018-04-04T10:53:45.259Z] >>> HTTP REQUEST PUT https://kanya-collections.firebaseio.com/.settings/rules.json?dryRun=true {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+} 
+ Wed Apr 04 2018 16:23:45 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T10:53:55.577Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database kanya-collections is valid
+[debug] [2018-04-04T10:53:55.582Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/kanya-collections  
+ Wed Apr 04 2018 16:23:55 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T10:53:57.222Z] <<< HTTP RESPONSE 200
+[info] i  storage: checking storage.rules for compilation errors...
+[debug] [2018-04-04T10:53:57.234Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/kanya-collections:test { source: { files: [ [Object] ] } } 
+ Wed Apr 04 2018 16:23:57 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T10:54:01.861Z] <<< HTTP RESPONSE 200
+[info] +  storage: rules file storage.rules compiled successfully
+[info] i  firestore: checking firestore.rules for compilation errors...
+[debug] [2018-04-04T10:54:01.876Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/kanya-collections:test { source: { files: [ [Object] ] } } 
+ Wed Apr 04 2018 16:24:01 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T10:54:03.281Z] <<< HTTP RESPONSE 200
+[info] +  firestore: rules file firestore.rules compiled successfully
+[debug] [2018-04-04T10:54:03.289Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase experimental:functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "~5.4.2",
+    "firebase-functions": "^0.7.1"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[info] i  runtimeconfig: ensuring necessary APIs are enabled...
+[debug] [2018-04-04T10:54:03.297Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/kanya-collections?view=CONSUMER_VIEW  
+ Wed Apr 04 2018 16:24:03 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T10:54:03.299Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/kanya-collections?view=CONSUMER_VIEW  
+ Wed Apr 04 2018 16:24:03 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T10:54:05.286Z] <<< HTTP RESPONSE 200
+[info] +  functions: all necessary APIs are enabled
+[debug] [2018-04-04T10:54:05.325Z] <<< HTTP RESPONSE 200
+[info] +  runtimeconfig: all necessary APIs are enabled
+[debug] [2018-04-04T10:54:05.330Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/kanya-collections  
+ Wed Apr 04 2018 16:24:05 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T10:54:05.331Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/kanya-collections/apiKeys  
+ Wed Apr 04 2018 16:24:05 GMT+0530 (India Standard Time)
+[debug] [2018-04-04T10:54:09.968Z] <<< HTTP RESPONSE 200
+[info] 
+
+There was an issue deploying your functions. Verify that your project has a Google App Engine instance setup at https://console.cloud.google.com/appengine and try again. If this issue persists, please contact support.
+[debug] [2018-04-04T10:54:47.431Z] Error: connect ETIMEDOUT 216.58.196.170:443
+    at Object.exports._errnoException (util.js:1018:11)
+    at exports._exceptionWithHostPort (util.js:1041:20)
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1086:14)
+[error] 
+[error] Error: Server Error. connect ETIMEDOUT 216.58.196.170:443

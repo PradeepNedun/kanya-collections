@@ -1,0 +1,35 @@
+.pre-footer {
+    background: #373f46;
+    height: 80px;
+    clear: both;
+    width: 100%;
+}
+.footer-links a{
+    color: #fff;
+    text-decoration: none !important;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 15px;
+    margin-top: 10px;
+    margin-left: 0;
+}
+
+.footer-legal {
+    color: #adb3b9;
+    font-size: 12px;
+    font-weight: 300;
+}
+.footer-content {
+    margin: 0px; 
+    padding: 12px;
+}
+
+.footer-links h5 {
+    color: #adb3b9;
+    font: 500 12px Museo-Sans;
+    text-transform: uppercase;
+}
+.footer-background {
+    background: #434a51;
+}

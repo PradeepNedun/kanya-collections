@@ -1,0 +1,35 @@
+.mat-elevation-z8 {
+  min-height: 400px;
+  background: #1D2733 !important;
+  padding: 0 !important;
+}
+.order {
+  color: #ff4081 !important;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.no-item-wrapper {
+  text-align: center;
+  padding-top: 150px;
+}
+.add-cart {
+  width: 100px;
+  height: 100px;
+  padding-top: 8px;
+}
+.no-item-wrapper .material-icons {
+  font-size: 48px !important;
+}
+.no-order {
+  margin-bottom: 4px;
+  margin-top: 4px;
+  font-weight: bold;
+}
+.align {
+  vertical-align: super;
+  text-transform: capitalize;
+  padding-left:  10px;
+}
+.bottom-space {
+  margin-bottom: 8px;
+}

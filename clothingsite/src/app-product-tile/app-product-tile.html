@@ -1,0 +1,56 @@
+<section class="row main-content">
+     <app-filter-panel (messageEvent)="receiveMessage($event)"></app-filter-panel>
+     <section class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+         <div *ngFor="let product of products">
+            <mat-card class="col-lg-3 col-md-3 col-sm-5 col-xs-12 product-card">
+                    <div class="product-img-container">
+                        <img mat-card-image [src]="product.image" alt="">
+                        <mat-progress-spinner [color]="color" [mode]="product.mode">
+                        </mat-progress-spinner>
+                        <button class="btn-fav" color="primary" mat-mini-fab [ngClass]="{'active': product.favorite === true}" (click)="addToMyFavorite(product)">
+                            <mat-icon aria-label="icon-button with a heart icon">favorite</mat-icon>
+                        </button>
+                    </div>
+                <mat-card-content>
+                        <mat-card-header>
+                                <mat-card-title>{{product.name}}</mat-card-title>
+                        </mat-card-header>
+                        <div class="row color-strip" >
+                            <div class="color-wrapper" *ngFor="let item of product.colors">
+                                <button mat-fab [style.background]="item" [ngClass]="{'active': selectedProductAndColor === product.id + item}" (click)="getProductImage(product, item)"></button>
+                            </div>
+                        </div>
+                        <div class="row size-strip">
+                            <button *ngFor="let item of product.sizes" mat-fab color="warn" [ngClass]="{'active': selectedSizeAndColor === product.id + item}">
+                                <span (click)="setSelectedSize(product, item)" class="size">{{item}}</span>
+                            </button>
+                        </div>
+                        <button mat-raised-button color="primary">
+                                <span class="actual-price">
+                                    &#x20b9; {{product.actualPrice}}
+                                </span>
+                                <span class="final-price">
+                                    &#x20b9; {{product.discountedPrice}}
+                                </span>
+                        </button>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-raised-button color="accent" (click)="addProductToCart(product)"><span class="cart">Add to Cart</span></button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </section>
+    <section class="col-lg-1 col-md-1 col-sm-9 col-xs-12">
+        <div class="fav-icon">
+           <button [ngClass]="{'active': productAdded === true}" mat-mini-fab class="btn_shopping_cart" (click)="goToShipment()">
+               <span class="product-counter">{{productsInCartCount}}</span>
+              <mat-icon aria-label="icon-button with a heart icon" class="icon_shopping_cart">shopping_cart</mat-icon>
+           </button>
+        </div>
+    </section>
+</section>
+<div *ngIf="productsInCartCount > 0" class="checkout-banner-background col-lg-12 col-md-12 col-sm-12 col-xs-12 button-row">
+    <button mat-raised-button class="col-lg-3 col-md-4 col-sm-4 col-xs-12 btn_add_more" color="primary" (click)="goToShipping()">
+        Procced to Checkout
+    </button>
+</div>

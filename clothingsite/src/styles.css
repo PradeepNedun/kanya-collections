@@ -1,0 +1,217 @@
+@import '~https://fonts.googleapis.com/icon?family=Material+Icons';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+ body {
+    margin: 0;
+    font-family: Roboto, sans-serif;
+    overflow-x: hidden;
+    font-size: 18px;
+  }
+
+  /*app-header*/
+  .mat-card-header {
+    display: block !important;
+  }
+  mat-toolbar-row {
+    justify-content: space-between;
+  }
+  .mat-form-field-placeholder, .mat-form-field-infix {
+    color: #fff !important; 
+    font-size: 18px;   
+  }
+  .mat-form-field-infix {
+    border-top-width: 0px !important;
+  }
+  .mat-form-field-underline {
+    background-color: #fff !important;
+  }
+  .mat-icon-button .mat-button-wrapper>* {
+    vertical-align: super !important;
+  }
+/*app-filter-panel*/
+.mat-expansion-panel {
+    background: #3a5b78 !important;
+ }
+.mat-expansion-panel-header{
+  background: rgb(255, 64, 129) !important;
+}
+.mat-radio-button {
+  display: block !important;
+  text-align: left;
+  padding: 5px;
+}
+.mat-expansion-panel-header-title {
+  color: #fff !important;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.mat-expansion-panel-header {
+  height: 48px !important;
+}
+
+/*app-product-tile*/
+.mat-card { 
+  max-width: 100%;
+  margin: 2em auto;
+  text-align: center;
+  background: #d8e1e8;
+}
+.mat-card-title {
+  font-weight: bold !important;
+  text-transform: uppercase;
+}
+.mat-card-header-text {
+  margin: 0 !important;
+}
+.mat-progress-spinner {
+  position: absolute !important;
+  bottom: 100px;
+  left: 32%;
+}
+.mat-card>.mat-card-actions:last-child {
+  margin-bottom: 0 !important;
+}
+.mat-card-content>:last-child:not(.mat-card-footer) {
+  margin-bottom: 5px !important;
+}
+.mat-card-content {
+  margin-bottom: 3px !important;
+  margin-top: -10px;
+}
+.mat-fab .mat-button-wrapper {
+  padding: 0 !important;
+}
+.mat-accent {
+  width: 100%;
+}
+.size-strip .mat-fab {
+  width: 30px !important;
+  height: 30px !important;
+  line-height: 30px !important;
+}
+.size-strip .mat-fab {
+  margin-bottom: 15px;
+  margin-top: 10px;
+  margin-right: 8px;
+}
+.color-strip .mat-fab {
+  width: 20px !important;
+  height: 20px !important;
+  line-height: 30px !important;
+  border-radius: 0 !important;
+  margin-right: 8px !important;
+  margin-bottom: 16px;
+}
+.cdk-focussed, .cdk-mouse-focussed {
+  border: solid 1px black;
+}
+.mat-simple-snackbar {
+  color: #ff4081 !important;
+}
+/*app-checkout-banner*/
+.mat-list-item-content {
+  color: #fff;
+}
+.mat-list-item {
+  height: auto !important;
+  padding: 10px;
+}
+.checkout-banner-background {
+  background: #373f46;
+  display: grid;
+  color: #fff;
+  display: inline;
+  padding: 32px 32px 32px 64px;
+}
+.checkout-price {
+  text-align: right;
+}
+.btn_add {
+  padding-right: 30px;
+}
+.btn_remove{
+  padding-left: 10px;
+}
+
+.btn_add_more {
+  margin-bottom: 10px;
+}
+.btn_add_more, .btn_continue {
+  margin-right: 20px;
+  font-weight: bold;
+  float: right;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.buy_total {
+  float: right;
+  text-align: right;
+  margin-right: 7%;
+  font-weight: bolder;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  right: 0;
+  color: #c6c28e;
+  font-size: 20px;
+}
+.checkout-list-table {
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+/*app-shipping-info*/
+.mat-table {
+  max-height: inherit !important;
+}
+.mat-header-cell {
+  font-size: 1.2em !important;
+  font-weight: bold !important;
+  padding-top: 12px;
+}
+.mat-cell, .mat-header-cell {
+  color: #fff !important;
+  flex: none !important;
+}
+.mat-form-field-infix {
+  margin-top: 32px;
+}
+.mat-header-row, .mat-row {
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+  border-bottom-color: rgb(86, 91, 93) !important;
+}
+.mat-row {
+  background: #1D2733 !important;
+}
+.mat-row:last-child {
+  border-bottom: none !important;
+}
+.mat-header-row {
+  background: #434a51 !important;
+}
+.mat-select-arrow, .mat-select-value {
+  color: #fff !important;
+}
+
+/*app-customer-info*/
+.mat-hint {
+  color: #fff !important;
+}
+.mat-checkbox-frame {
+  border-color: #fff !important;
+}
+.mat-input-element:disabled {
+  color: #fff !important;
+}
+
+/*app-order-history*/
+.mat-divider {
+  border-top-color: #fff !important;
+  margin-top: 22px !important;
+}
+.mat-spinner {
+  left: 40%;
+}
+mat-list-item.mat-list-item.mat-multi-line:last-child .mat-divider {
+  border: none;
+}

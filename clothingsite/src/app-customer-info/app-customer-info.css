@@ -1,0 +1,41 @@
+.form-container {
+    background: #1D2733;
+}
+.dash {
+    color: #fff;
+    bottom: 24px;
+    position: absolute;
+}
+.favortie {
+    color: #fff;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+.dialog-status {
+    font-weight: 800;
+    font-size: 13px;
+    color: #ff4081;
+}
+.dialog-payment-msg {
+    font-size: 12px;
+}
+.fav-address {
+    margin-top: 20px;
+    margin-left: 12px;
+}
+.btn_use_fav_address {
+    font-weight: 800;
+    font-size: 13px;
+}
+.btn_continue {
+    float: right;
+    margin-right: 85px;
+}
+@media only screen and (max-width: 767px) {
+    .btn_continue {
+        margin-right: 0;
+    }
+    .btn_go_back {
+        margin-top: 28px;
+    }
+}

@@ -1,0 +1,90 @@
+<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mat-elevation-z8">
+  <div *ngIf="products.length !== 0">
+    <mat-table #table [dataSource]="dataSource" class="row shipping-info-table">
+      <!-- code for mobile starts-->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef class="col-lg-4 col-md-4 col-sm-4 col-xs-12"> Your Items </mat-header-cell>
+        <mat-cell *matCellDef="let element" class="col-lg-4 col-md-4 col-sm-4 col-xs-12"> 
+          <img src="{{element.image}}"/>
+          <div class="product-info">
+            <p>{{element.name}}</p>
+            <span class="size">{{element.selectedSize}}</span>
+            <span class="visible-xs total-price-mobile"> &#x20b9; {{element.totalPrice}}</span>
+            <div class="visible-xs row qt-mobile">
+                <mat-form-field class="col-xs-6 qty-select-mobile">
+                  <mat-select [(ngModel)]="element.quantity" (ngModelChange)="updatePrice(element, $event)">
+                    <mat-option [value]="1">1</mat-option>
+                    <mat-option [value]="2">2</mat-option>
+                    <mat-option [value]="3">3</mat-option>
+                    <mat-option [value]="4">4</mat-option>
+                    <mat-option [value]="5">5</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <button mat-mini-fab color="warn" title="remove" class="col-xs-4 btn-remve-mobile" (click)="removeItem(element)"><i class="material-icons">remove_shopping_cart</i></button>        
+            </div>
+          </div>
+        </mat-cell>
+      </ng-container>
+    <!-- code for mobile ends-->
+      <!-- Unit Price Column -->
+      <ng-container matColumnDef="discountedPrice">
+        <mat-header-cell *matHeaderCellDef class="col-lg-2 col-md-2 col-sm-2 hidden-xs"> Unit Price </mat-header-cell>
+        <mat-cell *matCellDef="let element" class="col-lg-2 col-md-2 col-sm-2 hidden-xs"> &#x20b9; {{element.discountedPrice}} </mat-cell>
+      </ng-container>
+  
+      <!-- qunatity Column -->
+      <ng-container matColumnDef="quantity">
+        <mat-header-cell *matHeaderCellDef class="col-lg-2 col-md-2 col-sm-2 hidden-xs"> Quantity </mat-header-cell>
+        <mat-cell *matCellDef="let element" class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
+          <mat-form-field>
+            <mat-select [(ngModel)]="element.quantity" (ngModelChange)="updatePrice(element, $event)">
+              <mat-option [value]="1">1</mat-option>
+              <mat-option [value]="2">2</mat-option>
+              <mat-option [value]="3">3</mat-option>
+              <mat-option [value]="4">4</mat-option>
+              <mat-option [value]="5">5</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-cell>
+      </ng-container>
+  
+      <!-- Total Price Column -->
+      <ng-container matColumnDef="totalPrice">
+          <mat-header-cell *matHeaderCellDef class="col-lg-2 col-md-2 col-sm-2 hidden-xs"> Price </mat-header-cell>
+          <mat-cell *matCellDef="let element" class="col-lg-2 col-md-2 col-sm-2 hidden-xs price"> &#x20b9; {{element.totalPrice}} </mat-cell>
+        </ng-container>
+
+      <!-- Remove Column -->
+      <ng-container matColumnDef="remove">
+            <mat-header-cell *matHeaderCellDef class="col-lg-2 col-md-2 col-sm-2 hidden-xs"> Remove </mat-header-cell>
+            <mat-cell *matCellDef="let element" class="col-lg-2 col-md-2 col-sm-2 hidden-xs"> 
+                <button mat-mini-fab color="warn" title="remove" (click)="removeItem(element)"><i class="material-icons">remove_shopping_cart</i></button> 
+            </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <div>
+        <form class="coupon col-lg-3 col-md-3 col-sm-5 col-xs-8">
+            <mat-form-field class="col-lg-9 col-md-9 col-sm-9 col-xs-5">
+              <input matInput placeholder="Apply Promo" [(ngModel)]="promoCode" name="promo">
+            </mat-form-field>
+            <button mat-raised-button class="col-lg-3 col-md-3 col-sm-3 col-xs-2 btn_apply" color="primary" (click)="validatePromo()">
+              Apply
+            </button>
+        </form>
+    </div>
+  </div>
+  <div class="no-item-wrapper" *ngIf="products.length == 0">
+      <button mat-mini-fab color="warn" title="remove" class="add-cart" (click)="goToHome()"><i class="material-icons">add_shopping_cart</i></button>
+  </div>
+</section>
+<div class="checkout-banner-background col-lg-12 col-md-12 col-sm-12 col-xs-12 button-row">
+    <button mat-raised-button *ngIf="productsInCartCount > 0" class="col-lg-3 col-md-4 col-sm-4 col-xs-12 btn_continue" color="accent" (click)="goToCustomer()">
+        Proceed to Address 
+    </button>
+    <button mat-raised-button  class="col-lg-3 col-md-4 col-sm-4 col-xs-12 btn_continue btn_add_more" color="accent" (click)="goToHome()">
+        Add Products 
+    </button>
+</div>

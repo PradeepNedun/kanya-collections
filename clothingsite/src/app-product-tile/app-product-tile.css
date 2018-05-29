@@ -1,0 +1,86 @@
+.main-content {
+    background: #1D2733;
+}
+.product-card {
+    margin: 30px 30px 30px 0;
+}
+.product-card ul li {
+    color: rgb(140, 150, 157);
+}
+.btn_shopping_cart {
+    width: 80px;
+    height: 80px;
+    box-shadow: -5px -5px 10px #f44336 !important;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
+.btn_add_more {
+    float: right;
+    margin-right: 85px;
+}
+.actual-price {
+    text-decoration: line-through;
+    padding-right: 20px;
+}
+.actual-price, .final-price, .cart {
+    font-weight: bold;
+}
+.btn-fav {
+    position: absolute;
+    bottom: 25px;
+    right: 0;
+}
+.btn-fav.active {
+    background: #e91e63;
+}
+.product-img-container {
+    position: relative;
+}
+.color-strip .color-wrapper {
+    display: inline;
+}
+.color-wrapper button.active {
+    border: solid 1px beige;
+}
+.size-strip button.active {
+    background: #3f51b5;
+}
+.product-counter {
+    position: absolute;
+    top: 22px;
+    left: 35px;
+    color: #f44336;
+    font-size: 22px;
+    font-weight: bold;
+}
+.icon_shopping_cart {
+    font-size: 60px;
+    margin-left: -32px;
+    margin-top: 4px;
+}
+@-webkit-keyframes bounce { 
+    0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);} 
+    40% {-webkit-transform: translateY(-30px);} 
+    60% {-webkit-transform: translateY(-15px);} 
+ } 
+ 
+ @keyframes bounce { 
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+    40% {transform: translateY(-30px);} 
+    60% {transform: translateY(-15px);} 
+ }
+.btn_shopping_cart.active {
+    -webkit-animation-name: bounce; 
+    animation-name: bounce;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s; 
+    -webkit-animation-fill-mode: both; 
+    animation-fill-mode: both;
+}
+@media only screen and (max-width: 767px) {
+    .btn_add_more {
+        margin-right: 0;
+    }
+}

@@ -1,0 +1,69 @@
+header {
+    background: #373f46;
+    padding: 25px 20px 0 20px;
+}
+header.mobile-menu {
+    text-align: right;
+    color: #ffffff;
+}
+.logo-container {
+    width: 60px;
+    height: 80px;
+    float: left;
+    margin-left: 15px;
+}
+.logo-container-mobile {
+    width: 73px;
+    height: 30px;
+    margin-top: -10px;
+    margin-left: -18px;
+}
+.logo {
+    width: 100%;
+}
+.keep-right {
+    text-align: center;
+    float: right;
+}
+.menu-wrapper {
+    padding-left: 0px;
+}
+.menu-wrapper li {
+    display: inline;
+}
+button.mat-button  {
+    /* Applies to all unvisited links */
+    text-decoration:  none;
+    font-weight:      bold;
+    color:            #fff;
+    cursor:           pointer;
+} 
+button.mat-button:visited {
+    /* Applies to all visited links */
+    font-weight:      bold;
+    background-color: #ddd;
+    color:            #f0f;
+} 
+button.mat-button:hover   {
+    /* Applies to links under the pointer */
+    font-weight:      bold;
+    background-color: none;
+    color:            #fff;
+} 
+button.mat-button:active  {
+    /* Applies to activated links */
+    font-weight:      bold;
+    background-color: black;
+    color: white;
+}
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    color: #fff;
+}
+
+.example-full-width {
+    width: 100%;
+}
+

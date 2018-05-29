@@ -1,0 +1,53 @@
+<header class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden-xs">
+  <section class="logo-container">
+      <img class="logo" src="../assets/logo.png"/>
+  </section>
+  <section class="col-lg-5 col-md-6 col-sm-8 col-xs-12 keep-right">
+    <ul class="menu-wrapper">
+      <li>
+          <button mat-button>
+            Welcome {{userName}}
+          </button>
+      </li>
+      <li>
+          <mat-menu #accountMenu="matMenu" yPosition="below" xPosition="after">
+              <button mat-menu-item> Update Profile </button>
+              <button mat-menu-item> Your Orders </button>
+          </mat-menu>
+         
+          <button mat-button [matMenuTriggerFor]="accountMenu">
+            Account
+          </button>
+      </li>
+      <li>
+          <button id="btn_login" mat-raised-button color="warn" (click)="signInSignOutWithGoogle()">
+            {{logInOrLogOut}}
+          </button>
+      </li>
+    </ul>
+  </section>
+</header>
+<header class="visible-xs mobile-menu">
+  <section class="col-sm-3 col-xs-3 logo-container-mobile">
+    <img class="logo" src="../assets/logo.png"/>
+  </section>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>person_pin</mat-icon>
+      <span>Welcome {{userName}}</span>
+    </button>
+    <button mat-menu-item (click)="goToOrders()">
+      <mat-icon>shopping_cart</mat-icon>
+      <span>Your Orders</span>
+    </button>
+    <button mat-menu-item id="btn_login" (click)="signInSignOutWithGoogle()">
+      <mat-icon *ngIf="logInOrLogOut === 'Log In'">thumb_up</mat-icon>
+      <mat-icon *ngIf="logInOrLogOut === 'Log Out'">thumb_down</mat-icon>
+      <span>{{logInOrLogOut}}</span>
+    </button>
+  </mat-menu>
+</header>
+
